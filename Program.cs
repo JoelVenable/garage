@@ -16,6 +16,7 @@ namespace Garage
 
             electricVehicles.ForEach(vehicle =>
             {
+                vehicle.ChargeBattery();
                 if (vehicle is Tesla tesla)
                 {
                     // Something specific to Teslas
@@ -25,8 +26,11 @@ namespace Garage
             List<IRefuelable> gasVehicles = new List<IRefuelable>()
             {
                 new Cessna() { FuelCapacity = 22.4, MaximumOccupancy = 4},
+                new Ram() { FuelCapacity = 19.1, MaximumOccupancy = 5},
 
-            }
+            };
+
+            
         }
     }
 }
